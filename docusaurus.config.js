@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'react-native-echarts-pro-docs',
+  title: 'react-native-echarts-pro',
   tagline: 'Based on echarts',
   url: 'https://supervons.github.io',
   baseUrl: '/react-native-echarts-pro-docs/',
@@ -15,7 +15,10 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'supervons', // Usually your GitHub org/user name.
   projectName: 'react-native-echarts-pro-docs', // Usually your repo name.
-
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh-cn'],
+  },
   presets: [
     [
       'classic',
@@ -49,6 +52,10 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
           {
             type: 'doc',
             docId: 'intro',
