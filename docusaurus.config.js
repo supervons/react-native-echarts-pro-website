@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'react-native-echarts-pro-docs',
+  tagline: 'Based on echarts',
   url: 'https://supervons.github.io',
   baseUrl: '/react-native-echarts-pro-docs/',
   onBrokenLinks: 'throw',
