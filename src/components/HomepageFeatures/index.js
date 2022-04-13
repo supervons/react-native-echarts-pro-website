@@ -6,31 +6,29 @@ import Translate from '@docusaurus/Translate';
 const FeatureList = [
   {
     title: <Translate>Easy to Use</Translate>,
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/home/easy.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        If you used echarts, than you can learn it within <code>5 minutes</code>.
+        If not, you can fully learn it within an hour.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Map Supported',
+    Svg: require('@site/static/img/home/map.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+          Support map
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Sustainable',
+    Svg: require('@site/static/img/home/update.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+          Continuous maintenance, continuous update, continuous upgrade.
       </>
     ),
   },

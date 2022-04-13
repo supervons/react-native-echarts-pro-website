@@ -7,50 +7,12 @@ sidebar_position: 2
 | Method name  |             Params             |                     Description                     |
 | :----------: | :----------------------------: | :-------------------------------------------------: |
 | setNewOption | option(require), optionSetting |           Reassign and render the chart.            |
-|   onPress    |          callbackData          | Chart click event,callbackData is the clicked data. |
-|  onDataZoom  |          callbackData          |                  Chart zoom event.                  |
+| getInstance | functionName, params |           Get chart instance.            |
+|   dispatchAction    |          callbackData          | Chart click event,callbackData is the clicked data. |
 
-## Create your first Doc
+## setNewOption
 
-Create a markdown file at `docs/hello.md`:
+## getInstance
+Get chart instance.
 
-```md title="docs/hello.md"
-# Hello
-
-This is my **first Docusaurus document**!
-```
-
-A new document is now available at `http://localhost:3000/docs/hello`.
-
-## Configure the Sidebar
-
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
-
-Add metadata to customize the sidebar label and position:
-
-```md title="docs/hello.md" {1-4}
----
-sidebar_label: 'Hi!'
-sidebar_position: 3
----
-
-# Hello
-
-This is my **first Docusaurus document**!
-```
-
-It is also possible to create your sidebar explicitly in `sidebars.js`:
-
-```js title="sidebars.js"
-module.exports = {
-  tutorialSidebar: [
-    {
-      type: 'category',
-      label: 'Tutorial',
-      // highlight-next-line
-      items: ['hello'],
-    },
-  ],
-};
-```
-
+## dispatchAction
