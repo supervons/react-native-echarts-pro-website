@@ -4,11 +4,11 @@ sidebar_position: 2
 
 # Method
 
-Documents are **groups of pages** connected through:
-
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
+| Method name  |             Params             |                     Description                     |
+| :----------: | :----------------------------: | :-------------------------------------------------: |
+| setNewOption | option(require), optionSetting |           Reassign and render the chart.            |
+|   onPress    |          callbackData          | Chart click event,callbackData is the clicked data. |
+|  onDataZoom  |          callbackData          |                  Chart zoom event.                  |
 
 ## Create your first Doc
 

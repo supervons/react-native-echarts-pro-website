@@ -9,16 +9,33 @@ import Translate from '@docusaurus/Translate';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+  const images = [
+      {
+          alt: 'version',
+          imgSrc: 'https://img.shields.io/npm/v/react-native-echarts-pro.svg?style=flat',
+          jumpUrl: 'https://www.npmjs.com/package/react-native-echarts-pro'
+      },
+      {
+          alt: 'down-month',
+          imgSrc: 'https://img.shields.io/npm/dm/react-native-echarts-pro.svg?style=flat',
+          jumpUrl: 'https://www.npmjs.com/package/react-native-echarts-pro'
+      }
+  ]
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
+        {
+          images.map(res=>{
+             return <img key={res.alt} style={{marginRight: 20, cursor: 'pointer'}} alt={res.alt} onClick={()=>{location.href=res.jumpUrl}} src={res.imgSrc}/>
+          })
+        }
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-              <Translate>Let's get it - 5min ⏱️</Translate>
+              <Translate>Get Started️</Translate>
           </Link>
         </div>
       </div>
