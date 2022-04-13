@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# Method
 
 Documents are **groups of pages** connected through:
 
@@ -53,3 +53,4 @@ module.exports = {
   ],
 };
 ```
+
