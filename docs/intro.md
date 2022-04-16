@@ -22,6 +22,8 @@ yarn add react-native-echarts-pro
 
 ## Usage
 ### Base
+<img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/pieDemo.png" alt="iOS基本使用"/><img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/pieDemo_android.png" alt="androd基本使用" />
+
 ```jsx
 import React from "react";
 import { View } from "react-native";
@@ -65,6 +67,8 @@ export default function RNEPDemo() {
 ```
 
 ### Map
+<img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/mapDemo.png" alt="iOS地图图片" height="500" align="bottom" /><img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/mapDemo_android.png" alt="android地图图片" height="500" align="bottom" />
+
 ```jsx
 import React from "react";
 import { View } from "react-native";
