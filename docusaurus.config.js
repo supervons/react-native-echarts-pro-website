@@ -69,7 +69,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/supervons/react-native-echarts-pro',
+            href: 'https://github.com/supervons',
             label: 'About',
             position: 'right',
           },

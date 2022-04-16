@@ -4,4 +4,4 @@ sidebar_position: 2
 
 # Sponsor
 
-[opencollective](https://opencollective.com/react-native-echarts-pro#category-CONTRIBUTE)
+You can sponsor us in : [opencollective](https://opencollective.com/react-native-echarts-pro#category-CONTRIBUTE)
