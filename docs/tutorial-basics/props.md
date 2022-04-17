@@ -134,6 +134,7 @@ Dynamic support for tripartite expansion, such as word cloud, water polo map, et
 
 ## customMapData
 Custom map data, default world map.
+
 ```jsx
 import ChinaJsonData from "./ChinaJsonData.js";
   return (
@@ -145,4 +146,5 @@ import ChinaJsonData from "./ChinaJsonData.js";
     </View>
   );
 ```
+
 [ChinaJsonData.js](https://github.com/supervons/react-native-echarts-pro/blob/master/src/components/Echarts/map/chinaJson.js)
