@@ -67,7 +67,9 @@ Chart configuration, see more : [Apache ECharts - options](https://echarts.apach
 Chart's WebView container background color, default `transparent`.
 
 ## themeName
-Chart’s built-in theme.
+Chart’s built-in theme:
+
+vintage || dark || macarons || infographic || shine || roma
 
 ## webViewSettings
 Chart's WebView container settings.
