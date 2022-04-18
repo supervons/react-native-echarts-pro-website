@@ -2,26 +2,26 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# 入门教程
 
-Let's discover **react-native-echarts-pro in less than 5 minutes**.
+让我们花 ** 5 分钟 ** 学习 **react-native-echarts-pro**.
 
-## Getting Started
+## 安装
 
 ```bash
 npm install react-native-echarts-pro --save
 ```
-or
+或者
 ```bash
 yarn add react-native-echarts-pro
 ```
-### What you'll need
-- [react-native](https://reactnative.dev/) version 0.59 or above.
+### 依赖项
+- [react-native](https://reactnative.dev/) 版本大于或等于 0.59.
 
-- [react-native-webview](https://github.com/react-native-webview/react-native-webview/) version 6.9.0 or above.
+- [react-native-webview](https://github.com/react-native-webview/react-native-webview/) 版本大于或等于 6.9.0.
 
-## Usage
-### Base
+## 例子
+### 基础
 <img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/pieDemo.png" alt="iOS基本使用"/><img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/pieDemo_android.png" alt="androd基本使用" />
 
 ```jsx
@@ -66,7 +66,7 @@ export default function RNEPDemo() {
 }
 ```
 
-### Map
+### 地图
 <img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/mapDemo.png" alt="iOS地图图片" height="500" align="bottom" /><img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/mapDemo_android.png" alt="android地图图片" height="500" align="bottom" />
 
 ```jsx

@@ -2,7 +2,7 @@
 sidebar_position: 6 
 ---
 
-# Sponsor
+# 友情赞助
 
-You can sponsor us in : [opencollective](https://opencollective.com/react-native-echarts-pro#category-CONTRIBUTE)
+如果你想的话，可以在这里请作者喝杯咖啡 : [opencollective](https://opencollective.com/react-native-echarts-pro#category-CONTRIBUTE)
     

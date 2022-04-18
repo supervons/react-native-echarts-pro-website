@@ -12,7 +12,7 @@
     "description": "The label for category Tutorial - Extras in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Basics": {
-    "message": "Basics",
+    "message": "基础",
     "description": "The label for category Basics in sidebar tutorialSidebar"
   }
 }

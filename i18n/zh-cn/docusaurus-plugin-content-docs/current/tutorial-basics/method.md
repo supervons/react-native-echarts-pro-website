@@ -6,12 +6,13 @@ sidebar_position: 2
 
 | Method name  |             Params             |                     Description                     |
 | :----------: | :----------------------------: | :-------------------------------------------------: |
-| setNewOption | option(require), optionSetting? |           Reassign and render the chart.            |
-| getInstance | functionName, params? |           Get chart instance.            |
-|   dispatchAction    |          callbackData?          | Chart click event,callbackData is the clicked data. |
+| setNewOption | option(require), optionSetting? |          重新设置图表 option.            |
+| getInstance | functionName, params? |           获取图表 instance.            |
+|   dispatchAction    |          callbackData?          | 图表事件监听. |
 
 ## setNewOption
 ### option
+图表核心配置项。
 
 ```jsx
 <RNEChartsPro ref={(echarts) => (this.echarts = echarts)} option={this.state.options}/>
@@ -21,7 +22,7 @@ this.echarts.setNewOption({...})
 ```
 
 ### optionSetting
-If you don't want to merge options, you can do this:
+默认是会合并每次更新的数据，如果不想合并可以参考：
 
 ```jsx
 <RNEChartsPro ref={(echarts) => (this.echarts = echarts)} option={this.state.options}/>
@@ -32,10 +33,11 @@ this.echarts.setNewOption({...}, {
     lazyUpdate?: boolean,
 })
 ```
-See more => [setOption](https://echarts.apache.org/en/api.html#echartsInstance.setOption)
+参考更多 => [setOption](https://echarts.apache.org/en/api.html#echartsInstance.setOption)
 
 ## getInstance
-Get the chart instance.
+获取图表实例 instance，以便做更多的操作.
+
 ### usage
 ```jsx
 function resizeHeight() {
@@ -54,7 +56,7 @@ return (
 ### getWidth
 `promise`
 
-Get the charts weight.
+获取图表实例宽度：
 ```jsx
 echartsRef.current.getInstance('getWeight').then(res=>{
   console.log(res)
@@ -64,7 +66,7 @@ echartsRef.current.getInstance('getWeight').then(res=>{
 ### getHeight
 `promise`
 
-Get the charts height.
+获取图表实例高度：
 ```jsx
 echartsRef.current.getInstance('getHeight').then(res=>{
   console.log(res)
@@ -74,7 +76,7 @@ echartsRef.current.getInstance('getHeight').then(res=>{
 ### getOption
 `promise`
 
-Get the charts option.
+获取图表 option 配置项：
 ```jsx
 echartsRef.current.getInstance('getOption').then(res=>{
   console.log(res)
@@ -84,7 +86,7 @@ echartsRef.current.getInstance('getOption').then(res=>{
 ### resize
 `void`
 
-Resizes chart, which should be called manually when container size changes.
+重新设置图表高度、宽度等属性：
 ```jsx
 echartsRef.current.getInstance('resize', {height: 300, ...other})
 ```
@@ -100,10 +102,10 @@ echartsRef.current.getInstance('dispatchAction', {
   dataIndex: 0,
 })
 ```
-See more => [EchartsInstance](https://echarts.apache.org/en/api.html#echartsInstance)
+查看更多 => [EchartsInstance](https://echarts.apache.org/en/api.html#echartsInstance)
 
 ## dispatchAction
-Will be merged to [getInstance](#getinstance).
+功能同： [getInstance](#getinstance).
 ```jsx
 echartsRef.current.dispatchAction({
   type: "showTip",
