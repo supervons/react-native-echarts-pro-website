@@ -45,7 +45,7 @@ export default function Demo() {
 More on `getInstance` later.
 
 ## width
-Chart area height, usually you don't need setting, it will follow parent container.
+Chart area width, usually you don't need setting, it will follow parent container.
 
 
 ```jsx title='This code echarts width will follow the parent view=200：'
