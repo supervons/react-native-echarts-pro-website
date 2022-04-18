@@ -9,7 +9,7 @@ const FeatureList = [
     Svg: require('@site/static/img/home/easy.svg').default,
     description: (
       <>
-          <Translate>If you used echarts, than you can learn it within 5 minutes. If not, you can fully learn it within an hour.</Translate>
+          <Translate>If you used echarts, than you can learn it within 5 minutes. If not, you can fully learn it within 30 minutes.</Translate>
       </>
     ),
   },

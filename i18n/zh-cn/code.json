@@ -155,7 +155,7 @@
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "Edit this page",
+    "message": "编辑此页面",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
@@ -243,7 +243,7 @@
   "Continuous maintenance, continuous update, continuous upgrade.": {
     "message": "持续维护、持续升级迭代！"
   },
-  "If you used echarts, than you can learn it within 5 minutes. If not, you can fully learn it within an hour.": {
+  "If you used echarts, than you can learn it within 5 minutes. If not, you can fully learn it within 30 minutes.": {
     "message": "如果你使用过 echarts，那么你可以在 5 分钟上手，没有也没关系，30 分钟足矣！"
   }
 }
