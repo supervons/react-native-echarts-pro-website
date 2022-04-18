@@ -9,26 +9,25 @@ const FeatureList = [
     Svg: require('@site/static/img/home/easy.svg').default,
     description: (
       <>
-        If you used echarts, than you can learn it within <code>5 minutes</code>.
-        If not, you can fully learn it within an hour.
+          <Translate>If you used echarts, than you can learn it within 5 minutes. If not, you can fully learn it within an hour.</Translate>
       </>
     ),
   },
   {
-    title: 'Map Supported',
+    title: <Translate>Map Supported</Translate>,
     Svg: require('@site/static/img/home/map.svg').default,
     description: (
       <>
-          Support map
+          <Translate>Support map</Translate>
       </>
     ),
   },
   {
-    title: 'Sustainable',
+    title: <Translate>Sustainable</Translate>,
     Svg: require('@site/static/img/home/update.svg').default,
     description: (
       <>
-          Continuous maintenance, continuous update, continuous upgrade.
+          <Translate>Continuous maintenance, continuous update, continuous upgrade.</Translate>
       </>
     ),
   },

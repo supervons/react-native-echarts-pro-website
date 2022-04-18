@@ -225,10 +225,25 @@
   "Easy to Use": {
     "message": "轻松上手"
   },
+  "Map Supported": {
+    "message": "支持地图"
+  },
+  "Support map": {
+    "message": "你可以很容易的在项目里面接入地图图表，并且进行数据交互！"
+  },
   "Docusaurus Tutorial - 5min ⏱️": {
     "message": "快速接入图表 - 只需 5 分钟⏱️"
   },
   "Get Started️": {
-    "message": "Get Started️"
+    "message": "开始接入"
+  },
+  "Sustainable": {
+    "message": "持续更新"
+  },
+  "Continuous maintenance, continuous update, continuous upgrade.": {
+    "message": "持续维护、持续升级迭代！"
+  },
+  "If you used echarts, than you can learn it within 5 minutes. If not, you can fully learn it within an hour.": {
+    "message": "如果你使用过 echarts，那么你可以在 5 分钟上手，没有也没关系，30 分钟足矣！"
   }
 }
