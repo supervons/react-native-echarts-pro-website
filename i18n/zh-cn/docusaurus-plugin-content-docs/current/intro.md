@@ -2,46 +2,145 @@
 sidebar_position: 1
 ---
 
-# 快速上手
+# Tutorial Intro
 
-让我们一起探索吧！ **只需 5 分钟**.
+Let's discover **react-native-echarts-pro in less than 5 minutes**.
 
 ## Getting Started
 
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
+```bash
+npm install react-native-echarts-pro --save
+```
+or
+```bash
+yarn add react-native-echarts-pro
+```
 ### What you'll need
+- [react-native](https://reactnative.dev/) version 0.59 or above.
 
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- [react-native-webview](https://github.com/react-native-webview/react-native-webview/) version 6.9.0 or above.
 
-## Generate a new site
+## Usage
+### Base
+<img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/pieDemo.png" alt="iOS基本使用"/><img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/pieDemo_android.png" alt="androd基本使用" />
 
-Generate a new Docusaurus site using the **classic template**.
+```jsx
+import React from "react";
+import { View } from "react-native";
+import RNEChartsPro from "react-native-echarts-pro";
 
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+export default function RNEPDemo() {
+  const pieOption = {
+    series: [
+      {
+        name: "Source",
+        type: "pie",
+        legendHoverLink: true,
+        hoverAnimation: true,
+        avoidLabelOverlap: true,
+        startAngle: 180,
+        radius: "55%",
+        center: ["50%", "35%"],
+        data: [
+          { value: 105.2, name: "android" },
+          { value: 310, name: "iOS" },
+          { value: 234, name: "web" },
+        ],
+        label: {
+          normal: {
+            show: true,
+            textStyle: {
+              fontSize: 12,
+              color: "#23273C",
+            },
+          },
+        },
+      },
+    ],
+  };
+  return (
+          <View style={{ height: 300, paddingTop: 25 }}>
+            <RNEChartsPro height={250} option={pieOption} />
+          </View>
+  );
+}
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+### Map
+<img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/mapDemo.png" alt="iOS地图图片" height="500" align="bottom" /><img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.0/react-native-echarts-pro/mapDemo_android.png" alt="android地图图片" height="500" align="bottom" />
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+```jsx
+import React from "react";
+import { View } from "react-native";
+import RNEChartsPro from "react-native-echarts-pro";
 
-## Start your site
+export default function Demo() {
+  const mapData = {
+    visualMap: {
+      show: true ,
+      left: "right",
+      top: "center",
+      min: 1,
+      max: 3,
+      calculable: true,
+    },
+    geo: [
+      {
+        type: "map",
+        map: "world",
+        mapType: "world",
+        selectedMode: "single",
+        itemStyle: {
+          normal: {
+            areaStyle: { color: "#B1D0EC" },
+            color: "#eeeeee",
+            borderColor: "#dadfde",
+          },
+          emphasis: {
+            //mouse hover style
+            label: {
+              show: true,
+              textStyle: {
+                color: "#000000",
+              },
+            },
+          },
+        },
+        roam: true,
+      },
+    ],
+    series: {
+      type: "effectScatter",
+      coordinateSystem: "geo",
+      geoIndex: 0,
+      itemStyle: {
+        color: "red",
+      },
+      data: [[116.4551, 40.2539, 10]],
+    },
+    toolbox: {
+      show: true,
+      orient: "horizontal",
+      x: "left",
+      y: "bottom",
+      backgroundColor: "#1e90ff60",
+      itemGap: 10,
+      itemSize: 10,
+      color: "#ffffff",
+      showTitle: false,
+      feature: {
+        restore: {
+          show: true,
+          title: "Reset",
+        },
+      },
+    },
+  };
 
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+  return (
+          <View style={{ height: 300 }}>
+            <RNEChartsPro height={250} option={mapData} />
+          </View>
+  );
+}
 ```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
