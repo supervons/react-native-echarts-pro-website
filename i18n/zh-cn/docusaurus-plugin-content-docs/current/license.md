@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# License
+# 开源协议
 
 MIT License
 
