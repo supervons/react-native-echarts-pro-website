@@ -18,7 +18,7 @@ const FeatureList = [
     Svg: require('@site/static/img/home/map.svg').default,
     description: (
       <>
-          <Translate>Support map</Translate>
+          <Translate>You can easily access maps and charts within the project and interact with data!</Translate>
       </>
     ),
   },
