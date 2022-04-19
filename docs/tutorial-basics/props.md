@@ -150,3 +150,7 @@ import ChinaJsonData from "./ChinaJsonData.js";
 ```
 
 [ChinaJsonData.js](https://github.com/supervons/react-native-echarts-pro/blob/master/src/components/Echarts/map/chinaJson.js)
+
+You can go to this page to download custom map JSON:
+
+https://geojson.io/
