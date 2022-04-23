@@ -35,6 +35,7 @@ function HomepageHeader() {
           }}
         >
           <img
+            alt={"log"}
             style={{ height: "100px" }}
             src={require("@site/static/img/logo.png").default}
           />
