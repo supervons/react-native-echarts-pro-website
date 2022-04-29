@@ -33,7 +33,7 @@ this.echarts.setNewOption({...}, {
     lazyUpdate?: boolean,
 })
 ```
-参考更多 => [setOption](https://echarts.apache.org/en/api.html#echartsInstance.setOption)
+参考更多 => [setOption](https://echarts.apache.org/zh/api.html#echartsInstance.setOption)
 
 ## getInstance
 获取图表实例 instance，以便做更多的操作.
@@ -102,7 +102,7 @@ echartsRef.current.getInstance('dispatchAction', {
   dataIndex: 0,
 })
 ```
-查看更多 => [EchartsInstance](https://echarts.apache.org/en/api.html#echartsInstance)
+查看更多 => [EchartsInstance](https://echarts.apache.org/zh/api.html#echartsInstance)
 
 ## dispatchAction
 功能同： [getInstance](#getinstance).

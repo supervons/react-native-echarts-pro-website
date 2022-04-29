@@ -61,7 +61,7 @@ export default function Demo() {
 如果你想动态设置宽度，参考**动态设置高度**。
 
 ## option
-图表核心配置项，非常重要，请参考 : [Apache ECharts - options](https://echarts.apache.org/en/option.html#title)
+图表核心配置项，非常重要，请参考 : [Apache ECharts - options](https://echarts.apache.org/zh/option.html#title)
 
 ## backgroundColor
 图表容器背景颜色, 默认为 `transparent`。
