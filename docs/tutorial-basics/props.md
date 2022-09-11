@@ -159,7 +159,7 @@ https://geojson.io/
 ## eventActions
 Custom charts events.
 
-See more [Event List](https://echarts.apache.org/zh/api.html#events)
+See more [Event List](https://echarts.apache.org/en/api.html#events)
 
 ```jsx
   return (
