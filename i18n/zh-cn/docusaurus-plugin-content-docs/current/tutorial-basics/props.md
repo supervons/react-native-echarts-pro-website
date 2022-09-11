@@ -159,6 +159,8 @@ https://geojson.io/
 ## eventActions
 自定义图表事件.
 
+详细的[事件列表](https://echarts.apache.org/zh/api.html#events)
+
 ```jsx
   return (
     <View style={{ height: 300, paddingTop: 25 }}>

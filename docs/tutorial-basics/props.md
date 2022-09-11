@@ -159,6 +159,8 @@ https://geojson.io/
 ## eventActions
 Custom charts events.
 
+See more [Event List](https://echarts.apache.org/zh/api.html#events)
+
 ```jsx
   return (
     <View style={{ height: 300, paddingTop: 25 }}>
