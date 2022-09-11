@@ -4,17 +4,18 @@ sidebar_position: 1
 
 # Props
 
-|       属性名        |  类型  |   默认值   | 必填 |                         描述                          |
-| :---------------: | :----: | :---------: | :-----: | :----------------------------------------------------------: |
-|      height       | number |     400     |    Y    |                      图表区域高度                       |
-|      width       | number |     auto     |    N    |                      图表区域宽度                       |
+|       属性名        |  类型  |     默认值     | 必填 |                                           描述                                            |
+| :---------------: | :----: |:-----------:| :-----: |:---------------------------------------------------------------------------------------:|
+|      height       | number |     400     |    Y    |                                         图表区域高度                                          |
+|      width       | number |    auto     |    N    |                                         图表区域宽度                                          |
 |      option       | object |    null     |    Y    | 图表核心配置项，请参考：[Apache ECharts - options](https://echarts.apache.org/en/option.html#title) |
-|  backgroundColor  | string | transparent |    N    |                      背景颜色                    |
-|     themeName     | string |      -      |    N    | 内置主题 ，六种可选:<br />vintage \|\| dark \|\| macarons \|\| infographic \|\| shine \|\| roma |
-|  webViewSettings  | object |    null     |    N    |            自定义 WebView 容器属性            |
-| formatterVariable | object |    null     |    N    |   如果 formatter 使用了动态单位变量，使用此属性传入   |
-| extension | object |    null     |    N    |   动态扩展支持，如词云、水球图等   |
-|   customMapData   | object |    world JSON     |    N    | 自定义地图数据，默认为世界地图 JSON |
+|  backgroundColor  | string | transparent |    N    |                                          背景颜色                                           |
+|     themeName     | string |      -      |    N    |                               内置主题 ，六种可选:<br />vintage \                                |\| dark \|\| macarons \|\| infographic \|\| shine \|\| roma |
+|  webViewSettings  | object |    null     |    N    |                                    自定义 WebView 容器属性                                     |
+| formatterVariable | object |    null     |    N    |                             如果 formatter 使用了动态单位变量，使用此属性传入                              |
+| extension | object |    null     |    N    |                                     动态扩展支持，如词云、水球图等                                     |
+|   customMapData   | object | world JSON  |    N    |                                  自定义地图数据，默认为世界地图 JSON                                   |
+|   eventActions   | object |    null     |    N    |                                         自定义传入事件                                         |
 
 ## height
 
@@ -155,3 +156,20 @@ import ChinaJsonData from "./ChinaJsonData.js";
 
 https://geojson.io/
 
+## eventActions
+自定义图表事件.
+
+```jsx
+  return (
+    <View style={{ height: 300, paddingTop: 25 }}>
+      <RNEChartsPro
+        eventActions={{
+          finished:()=>{
+            alert(1)
+          },
+        }}
+        {...props}
+      />
+    </View>
+  );
+```
