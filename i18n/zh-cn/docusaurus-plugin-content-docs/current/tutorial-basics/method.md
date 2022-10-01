@@ -113,3 +113,113 @@ echartsRef.current.dispatchAction({
   dataIndex: 0,
 })
 ```
+
+`datazoom` 示例:
+```jsx
+import React, { useRef } from "react";
+import { Text, View } from "react-native";
+import Echarts from "react-native-echarts-pro";
+export default function StockInDetail() {
+  const echartsRef = new useRef(null);
+  function highlight() {
+    echartsRef.current.dispatchAction({
+      // This line
+      batch: [
+        {
+          animation: {},
+          batch: null,
+          end: 80,
+          start: 30,
+          type: "datazoom",
+        },
+      ],
+      type: "dataZoom",
+    });
+  }
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Echarts
+        ref={echartsRef}
+        option={{
+          xAxis: {
+            type: "category",
+            boundaryGap: false,
+            inverse: true,
+            data: [
+              "2022/9/30",
+              "2022/9/29",
+              "2022/9/28",
+              "2022/9/27",
+              "2022/9/26",
+              "2022/9/25",
+              "2022/9/24",
+              "2022/9/23",
+              "2022/9/22",
+              "2022/9/21",
+            ],
+            axisTick: {
+              show: false,
+            },
+            axisLine: {
+              show: false,
+            },
+          },
+          yAxis: {
+            type: "value",
+            position: "right",
+            offset: 4,
+            axisLine: {
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine: {
+              lineStyle: {
+                type: "dashed",
+                color: "#ccc",
+              },
+            },
+            min: 0,
+            max: 150,
+            boundaryGap: [0, "100%"],
+          },
+          animation: false,
+          dataZoom: [
+            {
+              type: "inside",
+              minValueSpan: 5,
+              start: 0,
+              throttle: 0,
+              end: 10,
+            },
+            {
+              start: 0,
+              end: 10,
+            },
+          ],
+          series: [
+            {
+              name: "Fake Data",
+              type: "line",
+              symbol: "none",
+              sampling: "lttb",
+              itemStyle: {
+                color: "rgb(255, 70, 131)",
+              },
+              data: [50, 70, 80, 90, 30, 40, 56, 67, 78, 87],
+            },
+          ],
+        }}
+        height={300}
+        eventActions={{
+          dataZoom: params => {
+            console.log(params);
+          },
+        }}
+      />
+      <Text onPress={highlight}>Click action</Text>
+    </View>
+  );
+}
+```
