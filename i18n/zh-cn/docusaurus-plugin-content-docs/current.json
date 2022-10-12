@@ -14,5 +14,9 @@
   "sidebar.tutorialSidebar.category.Basics": {
     "message": "基础",
     "description": "The label for category Basics in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Map": {
+    "message": "地图",
+    "description": "The label for category Map in sidebar tutorialSidebar"
   }
 }
