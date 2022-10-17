@@ -1,8 +1,9 @@
 ---
 sidebar_position: 4
+sidebar_label: '版本比较'
 ---
 
-# Comparison
+# 版本比较
 
 下表为 `react-native-echarts-pro` 和 `Echarts` 之间的版本比较:
 

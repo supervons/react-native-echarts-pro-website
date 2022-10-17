@@ -18,5 +18,9 @@
   "sidebar.tutorialSidebar.category.Map": {
     "message": "地图",
     "description": "The label for category Map in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.comparison": {
+    "message": "地图",
+    "description": "The label for category Map in sidebar tutorialSidebar"
   }
 }

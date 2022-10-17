@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+sidebar_label: '入门教程'
 ---
 
 # 入门教程

@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
+sidebar_label: '基础用法'
 ---
 
-# usage
 本章将详细介绍地图的一系列操作，如果有未覆盖的场景，欢迎前往[问题专区](https://github.com/supervons/react-native-echarts-pro/issues)留言讨论。
 ## 基础用法
 以下为地图最小示例，后续操作将在该示例上进行增改：

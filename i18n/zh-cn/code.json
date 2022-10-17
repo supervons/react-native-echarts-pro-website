@@ -245,5 +245,8 @@
   },
   "If you used echarts, than you can learn it within 5 minutes. If not, you can fully learn it within 30 minutes.": {
     "message": "如果你使用过 echarts，那么你可以在 5 分钟上手，没有也没关系，30 分钟足矣！"
+  },
+  "A React-Native charts based on Apeach-Echarts, support various charts and map.": {
+    "message": "基于 Apeach-Echarts 并支持各种图表、地图的 React-Native 图表库."
   }
 }
