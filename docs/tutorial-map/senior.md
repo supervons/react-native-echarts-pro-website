@@ -1,38 +1,15 @@
 ---
 sidebar_position: 3
-sidebar_label: '高级'
+sidebar_label: 'senior'
 ---
-## 事件触发
-使用 `onPress` ：
-```jsx
-...
-<RNEChartsPro height={250} option={mapData} onPress={(res)=>alert(JSON.stringify(res))}/>
-...
-```
-回调数据格式如下：
-```json
-{
-  "color": "", 
-  "componentType": "geo", 
-  "data": {}, 
-  "dataIndex": 0, 
-  "dataType": "", 
-  "name": "China", 
-  "seriesIndex": 0, 
-  "seriesName": "", 
-  "seriesType": "", 
-  "type": "click", 
-  "value": 0
-}
-```
-其中，`name` 为选中国家/地区，`value` 为选中值（若为热力图等）。
-## 滑动，缩放及归位
-考虑到某些国家或地区在世界范围内较小，可能在默认缩放比例下不可见，故需要`滑动`或`缩放`来配合显示，`归位`则为复位默认缩放比例。
-### 滑动 & 缩放
-使用 `roam` 属性进行配置，如果只想要开启缩放或者平移，可以设置成 `'scale'` 或者 `'move'`。设置成 `true` 为都开启。
+## Move, zoom and reset
+Some countries/regions are small in the world, they may not be visible under the default zoom ratio, so `slide` or `zoom` is required to match the display, and `reset` is to reset the default zoom ratio.
+### move & zoom
+Use `roam` props, if you only want to enable zoom or move, you can set it to `'scale'` or `'move'`. Set to `true` to enable both.
 
-### 归位
-缩放或平移后，恢复初始位置；使用`toolbox`中的 `restore` 进行配置：
+### reset
+After zooming or panning, restore the original position; use `restore` in `toolbox` to configure:
+
 ```json
 toolbox: {
   show: true,
@@ -53,12 +30,179 @@ toolbox: {
   }
 ```
 
-[//]: #待补充 (TODO)
-### 列表优化
-如果地图处于 `FlatList` 或 `ScrollView` 中，`滑动&缩放`可能会和`列表滚动`存在冲突，可以使用进行优化：
+## Touch optimization
+If the map is in a `FlatList` or `ScrollView`, `move&zoom` may conflict with `list scroll` (especially on the `Android` side), such as the following example:
+```jsx
+import React from "react";
+import { ScrollView, View } from "react-native";
+import RNEChartsPro from "react-native-echarts-pro";
 
-## 自定义数据
-默认数据为世界地图，若需要自定义展示，可以前往
-[//]: #补充示例 (TODO)
+export default function MapCharts() {
+  const mapData = {
+    geo: [
+      {
+        type: "map",
+        map: "world",
+        mapType: "world",
+        selectedMode: "single",
+        itemStyle: {
+          normal: {
+            areaStyle: { color: "#B1D0EC" },
+            color: "#eeeeee",
+            borderColor: "#dadfde",
+          },
+          emphasis: {
+            //mouse hover style
+            label: {
+              show: true,
+              textStyle: {
+                color: "#000000",
+              },
+            },
+          },
+        },
+        roam: true,
+      },
+    ],
+    series: {
+      type: "effectScatter",
+      coordinateSystem: "geo",
+      geoIndex: 0,
+      itemStyle: {
+        color: "red",
+      },
+      data: [[116.4551, 40.2539, 10]],
+    },
+    toolbox: {
+      show: true,
+      orient: "horizontal",
+      x: "left",
+      y: "bottom",
+      backgroundColor: "#1e90ff60",
+      itemGap: 10,
+      itemSize: 10,
+      color: "#ffffff",
+      showTitle: false,
+      feature: {
+        restore: {
+          show: true,
+          title: "Reset",
+        },
+      },
+    },
+  };
 
-## 地图下钻
+  return (
+    <ScrollView style={{ flex: 1 }}>
+      <View style={{ height: 300, backgroundColor: "#965454" }}></View>
+      <RNEChartsPro
+        height={250}
+        option={mapData}
+        onPress={res => {
+          alert(JSON.stringify(res));
+        }}
+      />
+      <View style={{ height: 300, backgroundColor: "#c7b8a1" }}></View>
+    </ScrollView>
+  );
+}
+```
+
+The solution is to disable the scrolling state of the external list when the map area is touched, and resume scrolling when released, as follows:
+```jsx
+import React, { useRef } from "react";
+import { ScrollView, View } from "react-native";
+import RNEChartsPro from "react-native-echarts-pro";
+
+export default function MapCharts() {
+  const scrRef = useRef(null);
+  const handleStop = state => {
+    scrRef.current.setNativeProps({ scrollEnabled: state });
+  };
+  const mapData = {
+    geo: [
+      {
+        type: "map",
+        map: "world",
+        mapType: "world",
+        selectedMode: "single",
+        itemStyle: {
+          normal: {
+            areaStyle: { color: "#B1D0EC" },
+            color: "#eeeeee",
+            borderColor: "#dadfde",
+          },
+          emphasis: {
+            //mouse hover style
+            label: {
+              show: true,
+              textStyle: {
+                color: "#000000",
+              },
+            },
+          },
+        },
+        roam: true,
+      },
+    ],
+    series: {
+      type: "effectScatter",
+      coordinateSystem: "geo",
+      geoIndex: 0,
+      itemStyle: {
+        color: "red",
+      },
+      data: [[116.4551, 40.2539, 10]],
+    },
+    toolbox: {
+      show: true,
+      orient: "horizontal",
+      x: "left",
+      y: "bottom",
+      backgroundColor: "#1e90ff60",
+      itemGap: 10,
+      itemSize: 10,
+      color: "#ffffff",
+      showTitle: false,
+      feature: {
+        restore: {
+          show: true,
+          title: "Reset",
+        },
+      },
+    },
+  };
+
+  return (
+    <View
+      style={{ flex: 1 }}
+      onStartShouldSetResponderCapture={() => {
+        handleStop(true);
+      }}>
+      <ScrollView style={{ flex: 1 }} ref={scrRef}>
+        <View style={{ height: 300, backgroundColor: "#965454" }}></View>
+        <View
+          onStartShouldSetResponderCapture={() => {
+            handleStop(false);
+          }}>
+          <RNEChartsPro
+            height={250}
+            option={mapData}
+            onPress={res => {
+              alert(JSON.stringify(res));
+            }}
+          />
+        </View>
+        <View style={{ height: 300, backgroundColor: "#c7b8a1" }}></View>
+      </ScrollView>
+    </View>
+  );
+}
+
+```
+
+## Customize data
+The default data is the world map. If you need to customize the map json, you can download the map data from the following channels:
+
+- China：[echarts-china-cities-js](https://github.com/echarts-maps/echarts-china-cities-js)
+- Other：[geojson-io](https://geojson.io)
