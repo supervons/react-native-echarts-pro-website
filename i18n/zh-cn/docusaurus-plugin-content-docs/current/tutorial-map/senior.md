@@ -109,12 +109,100 @@ export default function MapCharts() {
 ```
 
 解决的办法就是，在触摸地图区域时，禁用外部列表滚动状态，释放时恢复滚动，如下：
+```jsx
+import React, { useRef } from "react";
+import { ScrollView, View } from "react-native";
+import RNEChartsPro from "react-native-echarts-pro";
+
+export default function MapCharts() {
+  const scrRef = useRef(null);
+  const handleStop = state => {
+    scrRef.current.setNativeProps({ scrollEnabled: state });
+  };
+  const mapData = {
+    geo: [
+      {
+        type: "map",
+        map: "world",
+        mapType: "world",
+        selectedMode: "single",
+        itemStyle: {
+          normal: {
+            areaStyle: { color: "#B1D0EC" },
+            color: "#eeeeee",
+            borderColor: "#dadfde",
+          },
+          emphasis: {
+            //mouse hover style
+            label: {
+              show: true,
+              textStyle: {
+                color: "#000000",
+              },
+            },
+          },
+        },
+        roam: true,
+      },
+    ],
+    series: {
+      type: "effectScatter",
+      coordinateSystem: "geo",
+      geoIndex: 0,
+      itemStyle: {
+        color: "red",
+      },
+      data: [[116.4551, 40.2539, 10]],
+    },
+    toolbox: {
+      show: true,
+      orient: "horizontal",
+      x: "left",
+      y: "bottom",
+      backgroundColor: "#1e90ff60",
+      itemGap: 10,
+      itemSize: 10,
+      color: "#ffffff",
+      showTitle: false,
+      feature: {
+        restore: {
+          show: true,
+          title: "Reset",
+        },
+      },
+    },
+  };
+
+  return (
+    <View
+      style={{ flex: 1 }}
+      onStartShouldSetResponderCapture={() => {
+        handleStop(true);
+      }}>
+      <ScrollView style={{ flex: 1 }} ref={scrRef}>
+        <View style={{ height: 300, backgroundColor: "#965454" }}></View>
+        <View
+          onStartShouldSetResponderCapture={() => {
+            handleStop(false);
+          }}>
+          <RNEChartsPro
+            height={250}
+            option={mapData}
+            onPress={res => {
+              alert(JSON.stringify(res));
+            }}
+          />
+        </View>
+        <View style={{ height: 300, backgroundColor: "#c7b8a1" }}></View>
+      </ScrollView>
+    </View>
+  );
+}
+
+```
 
 ## 自定义数据
 默认数据为世界地图，若需要自定义展示，可以前往以下渠道下载地图数据：
 
 - 中国数据：[echarts-china-cities-js](https://github.com/echarts-maps/echarts-china-cities-js)
 - 其他自定义：[geojson-io](https://geojson.io)
-
-
-## 地图下钻
