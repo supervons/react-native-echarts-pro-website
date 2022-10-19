@@ -29,7 +29,6 @@ toolbox: {
   }
 ```
 
-[//]: #待补充 (TODO)
 ### 列表优化
 如果地图处于 `FlatList` 或 `ScrollView` 中，`滑动&缩放`可能会和`列表滚动`存在冲突（尤其是 `Android` 端），例如如下示例：
 ```jsx
@@ -111,13 +110,15 @@ export default function MapCharts() {
 解决的办法就是，在触摸地图区域时，禁用外部列表滚动状态，释放时恢复滚动，如下：
 ```jsx
 import React, { useRef } from "react";
-import { ScrollView, View } from "react-native";
+import { Platform, ScrollView, View } from "react-native";
 import RNEChartsPro from "react-native-echarts-pro";
 
 export default function MapCharts() {
   const scrRef = useRef(null);
   const handleStop = state => {
-    scrRef.current.setNativeProps({ scrollEnabled: state });
+    if (Platform.OS === "android") {
+      scrRef.current.setNativeProps({ scrollEnabled: state });
+    }
   };
   const mapData = {
     geo: [
@@ -198,7 +199,6 @@ export default function MapCharts() {
     </View>
   );
 }
-
 ```
 
 ## 自定义数据
