@@ -107,19 +107,13 @@ export default function MapCharts() {
 }
 ```
 
-解决的办法就是，在触摸地图区域时，禁用外部列表滚动状态，释放时恢复滚动，如下：
+解决的办法就是，设置 `WebView` 的 `nestedScrollEnabled` 属性为 `true` 即可兼容：
 ```jsx
-import React, { useRef } from "react";
-import { Platform, ScrollView, View } from "react-native";
+import React from "react";
+import { ScrollView, View } from "react-native";
 import RNEChartsPro from "react-native-echarts-pro";
 
 export default function MapCharts() {
-  const scrRef = useRef(null);
-  const handleStop = state => {
-    if (Platform.OS === "android") {
-      scrRef.current.setNativeProps({ scrollEnabled: state });
-    }
-  };
   const mapData = {
     geo: [
       {
@@ -175,28 +169,20 @@ export default function MapCharts() {
   };
 
   return (
-    <View
-      style={{ flex: 1 }}
-      onStartShouldSetResponderCapture={() => {
-        handleStop(true);
-      }}>
-      <ScrollView style={{ flex: 1 }} ref={scrRef}>
-        <View style={{ height: 300, backgroundColor: "#965454" }}></View>
-        <View
-          onStartShouldSetResponderCapture={() => {
-            handleStop(false);
-          }}>
-          <RNEChartsPro
-            height={250}
-            option={mapData}
-            onPress={res => {
-              alert(JSON.stringify(res));
-            }}
-          />
-        </View>
-        <View style={{ height: 300, backgroundColor: "#c7b8a1" }}></View>
-      </ScrollView>
-    </View>
+    <ScrollView style={{ flex: 1 }}>
+      <View style={{ height: 300, backgroundColor: "#965454" }}></View>
+      <RNEChartsPro
+        height={250}
+        option={mapData}
+        webViewSettings={{
+          nestedScrollEnabled: true,
+        }}
+        onPress={res => {
+          alert(JSON.stringify(res));
+        }}
+      />
+      <View style={{ height: 300, backgroundColor: "#c7b8a1" }}></View>
+    </ScrollView>
   );
 }
 ```

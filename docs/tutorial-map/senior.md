@@ -108,17 +108,13 @@ export default function MapCharts() {
 }
 ```
 
-The solution is to disable the scrolling state of the external list when the map area is touched, and resume scrolling when released, as follows:
+The solution is setting the  `WebView` props `nestedScrollEnabled` to `true`：
 ```jsx
-import React, { useRef } from "react";
+import React from "react";
 import { ScrollView, View } from "react-native";
 import RNEChartsPro from "react-native-echarts-pro";
 
 export default function MapCharts() {
-  const scrRef = useRef(null);
-  const handleStop = state => {
-    scrRef.current.setNativeProps({ scrollEnabled: state });
-  };
   const mapData = {
     geo: [
       {
@@ -174,33 +170,23 @@ export default function MapCharts() {
   };
 
   return (
-    <View
-      style={{ flex: 1 }}
-      onStartShouldSetResponderCapture={() => {
-        handleStop(true);
-      }}>
-      <ScrollView style={{ flex: 1 }} ref={scrRef}>
-        <View style={{ height: 300, backgroundColor: "#965454" }}></View>
-        <View
-          onStartShouldSetResponderCapture={() => {
-            handleStop(false);
-          }}>
-          <RNEChartsPro
-            height={250}
-            option={mapData}
-            onPress={res => {
-              alert(JSON.stringify(res));
-            }}
-          />
-        </View>
-        <View style={{ height: 300, backgroundColor: "#c7b8a1" }}></View>
-      </ScrollView>
-    </View>
+    <ScrollView style={{ flex: 1 }}>
+      <View style={{ height: 300, backgroundColor: "#965454" }}></View>
+      <RNEChartsPro
+        height={250}
+        option={mapData}
+        webViewSettings={{
+          nestedScrollEnabled: true,
+        }}
+        onPress={res => {
+          alert(JSON.stringify(res));
+        }}
+      />
+      <View style={{ height: 300, backgroundColor: "#c7b8a1" }}></View>
+    </ScrollView>
   );
 }
-
 ```
-
 ## Customize data
 The default data is the world map. If you need to customize the map json, you can download the map data from the following channels:
 
