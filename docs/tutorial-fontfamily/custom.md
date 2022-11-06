@@ -1,20 +1,6 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
+自定义字体可以让你的图表拥有更丰富的展示能力。
 
-# Props
-
-```jsx
-  return (
-    <View style={{ height: 300, paddingTop: 25 }}>
-      <RNEChartsPro
-        eventActions={{
-          finished:()=>{
-            alert(1)
-          },
-        }}
-        {...props}
-      />
-    </View>
-  );
-```
+核心是让`WebView`容器加载字体，然后让`Echarts`能够进行调用，下面，将详细介绍如何接入自定义字体！

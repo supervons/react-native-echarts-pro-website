@@ -1,20 +1,14 @@
 ---
 sidebar_position: 1
 ---
-
-# Props
-
+使用 `Echarts` 内置字体，如下：
 ```jsx
-  return (
-    <View style={{ height: 300, paddingTop: 25 }}>
-      <RNEChartsPro
-        eventActions={{
-          finished:()=>{
-            alert(1)
-          },
-        }}
-        {...props}
-      />
-    </View>
-  );
+const options = {
+    ...,
+    textStyle: {
+        fontFamily: "monospace" //  'serif' , 'monospace', 'Arial', 'Courier New', 'Microsoft YaHei', ...
+    },
+    ...
+}
 ```
+更多请访问 [textStyle.fontFamily](https://echarts.apache.org/zh/option.html#textStyle.fontFamily)
