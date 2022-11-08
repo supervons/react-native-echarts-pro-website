@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-使用 `Echarts` 内置字体，如下：
+Use `Echarts` inner font family：
 ```jsx
 const options = {
     ...,
@@ -11,4 +11,4 @@ const options = {
     ...
 }
 ```
-更多请访问 [textStyle.fontFamily](https://echarts.apache.org/zh/option.html#textStyle.fontFamily)
+See more [textStyle.fontFamily](https://echarts.apache.org/zh/option.html#textStyle.fontFamily)
