@@ -4,6 +4,8 @@ sidebar_label: '自定义'
 ---
 自定义字体可以让你的图表拥有更丰富的展示能力。
 
+<img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.1/react-native-echarts-pro-website/font/demo_1.png" alt="字体Demo" height="500" align="bottom" />
+
 核心是让`WebView`容器加载字体，然后让`Echarts`能够进行调用，下面，将详细介绍如何接入自定义字体！
 
 ## 步骤
@@ -17,10 +19,10 @@ sidebar_label: '自定义'
 [点此跳转转换](https://transfonter.org/)
 
 首先，你需要勾选 `Base64 encode` 选项，然后点击 `Convert` 转换。
-<img style={{height:600}} src="https://raw.githubusercontent.com/supervons/ImageLibrary/master/react-native-echarts-pro-website/font/trans_1.png" alt="字体转换工具" height="500" align="bottom" />
+<img style={{height:600}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.1/react-native-echarts-pro-website/font/trans_1.png" alt="字体转换工具" height="500" align="bottom" />
 
 生成的文件就会包含 `CSS` 格式：
-<img style={{height:200}} src="https://raw.githubusercontent.com/supervons/ImageLibrary/master/react-native-echarts-pro-website/font/trans_2.png" alt="CSS文件" height="500" align="bottom" />
+<img style={{height:200}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.1/react-native-echarts-pro-website/font/trans_2.png" alt="CSS文件" height="500" align="bottom" />
 
 ### 2. 导出供 `JS` 使用
 新建字体 `CSS` 的 `JS` 文件，此处示例名称为 `TEST.js`，文件内容如下：

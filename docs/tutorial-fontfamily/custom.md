@@ -3,6 +3,8 @@ sidebar_position: 2
 ---
 Custom fonts can make your charts have richer display capabilities.
 
+<img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.1/react-native-echarts-pro-website/font/demo_1.png" alt="font family demo" height="500" align="bottom" />
+
 Center on `WebView` container loading font family, than `Echarts` call it, now, let's get it!
 
 ## Steps
@@ -16,10 +18,10 @@ Center on `WebView` container loading font family, than `Echarts` call it, now, 
 [Click there to change page](https://transfonter.org/)
 
 First，you needs checked `Base64 encode` options，then click `Convert`.
-<img style={{height:600}} src="https://raw.githubusercontent.com/supervons/ImageLibrary/master/react-native-echarts-pro-website/font/trans_1.png" alt="字体转换工具" height="500" align="bottom" />
+<img style={{height:600}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.1/react-native-echarts-pro-website/font/trans_1.png" alt="字体转换工具" height="500" align="bottom" />
 
 The file will contain the `CSS`：
-<img style={{height:200}} src="https://raw.githubusercontent.com/supervons/ImageLibrary/master/react-native-echarts-pro-website/font/trans_2.png" alt="CSS文件" height="500" align="bottom" />
+<img style={{height:200}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.1/react-native-echarts-pro-website/font/trans_2.png" alt="CSS文件" height="500" align="bottom" />
 
 ### 2. export `CSS` to `JS`
 Create `JS` file, named `TEST.js`：
