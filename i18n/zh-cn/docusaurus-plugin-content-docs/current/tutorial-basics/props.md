@@ -5,8 +5,8 @@ sidebar_label: '属性'
 
 # Props
 
-|       属性名        |  类型  |     默认值     | 必填 |                                           描述                                            |
-| :---------------: | :----: |:-----------:| :-----: |:---------------------------------------------------------------------------------------:|
+|       属性名        |   类型   |     默认值     | 必填 |                                           描述                                            |
+| :---------------: |:------:|:-----------:| :-----: |:---------------------------------------------------------------------------------------:|
 |      height       | number |     400     |    Y    |                                         图表区域高度                                          |
 |      width       | number |    auto     |    N    |                                         图表区域宽度                                          |
 |      option       | object |    null     |    Y    | 图表核心配置项，请参考：[Apache ECharts - options](https://echarts.apache.org/en/option.html#title) |
@@ -17,6 +17,7 @@ sidebar_label: '属性'
 | extension | object |    null     |    N    |                                     动态扩展支持，如词云、水球图等                                     |
 |   customMapData   | object | world JSON  |    N    |                                  自定义地图数据，默认为世界地图 JSON                                   |
 |   eventActions   | object |    null     |    N    |                                         自定义传入事件                                         |
+|   fontFamilies   | array  |    []     |    N    |                                         自定义字体数组                                         |
 
 ## height
 
@@ -175,4 +176,25 @@ https://geojson.io/
       />
     </View>
   );
+```
+
+## fontFamilies
+自定义字体数组.
+
+详细的[使用介绍](/react-native-echarts-pro-docs/zh-cn/docs/tutorial-fontfamily/custom)
+
+```jsx
+import TESTCSS from './TEST';
+import TESTCSS2 from './TEST2';
+return (
+  <View style={{ height: 300, paddingTop: 25 }}>
+    <RNEChartsPro
+      fontFamilies={[
+        { fontName: "TEST", fontFile: TESTCSS },
+        { fontName: "TEST2", fontFile: TESTCSS2 },
+      ]},
+      {...props}
+    />
+  </View>
+);
 ```

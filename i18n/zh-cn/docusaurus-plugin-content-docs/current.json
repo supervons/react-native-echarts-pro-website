@@ -23,7 +23,7 @@
     "message": "地图",
     "description": "The label for category Map in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.fontFamily": {
+  "sidebar.tutorialSidebar.category.FontFamily": {
     "message": "字体",
     "description": "The label for category Map in sidebar tutorialSidebar"
   }

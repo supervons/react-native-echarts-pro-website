@@ -16,6 +16,7 @@ sidebar_position: 1
 | extension | object |    null     |    N    |        Dynamic support for tripartite expansion, such as word cloud, water polo map, etc. example.        |
 |   customMapData   | object |    null     |    N    |                  For custom maps, null is a world map. See the following usage examples                   |
 |   eventActions   | object |    null     |    N    |                                           Custom charts events.                                           |
+|   fontFamilies   | array  |    []     |    N    |                                           Custom font families.                                           |
 
 ## height
 
@@ -174,4 +175,24 @@ See more [Event List](https://echarts.apache.org/en/api.html#events)
       />
     </View>
   );
+```
+## fontFamilies
+Custom font families.
+
+See more：[Usage](/react-native-echarts-pro-docs/docs/tutorial-fontfamily/custom)
+
+```jsx
+import TESTCSS from './TEST';
+import TESTCSS2 from './TEST2';
+return (
+  <View style={{ height: 300, paddingTop: 25 }}>
+    <RNEChartsPro
+      fontFamilies={[
+        { fontName: "TEST", fontFile: TESTCSS },
+        { fontName: "TEST2", fontFile: TESTCSS2 },
+      ]},
+      {...props}
+    />
+  </View>
+);
 ```
