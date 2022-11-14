@@ -10,7 +10,7 @@ sidebar_position: 1
 |      width       | number |     auto     |    N    |                                              Chart area auto                                              |
 |      option       | object |    null     |    Y    | Chart configuration, see more：[Apache ECharts - options](https://echarts.apache.org/en/option.html#title) |
 |  backgroundColor  | string | transparent |    N    |                                          Chart background color                                           |
-|     themeName     | string |      -      |    N    |                      There are only six officially available themes:<br />vintage \                       |\| dark \|\| macarons \|\| infographic \|\| shine \|\| roma |
+|     themeName     | string |      -      |    N    |                      There are only six officially available themes:<br />`vintage` `dark`  `macarons` `infographic` `shine` `roma`  |
 |  webViewSettings  | object |    null     |    N    |                                  Customize WebView container properties                                   |
 | formatterVariable | object |    null     |    N    |                         If option’formatter function need variable,can use this.                          |
 | extension | object |    null     |    N    |        Dynamic support for tripartite expansion, such as word cloud, water polo map, etc. example.        |
