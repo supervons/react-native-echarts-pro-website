@@ -9,7 +9,7 @@ Let's comparison `react-native-echarts-pro` to `Echarts` version:
 
 |          react-native-echarts-pro           | Echarts |                                       Update Log                                       | 
 |:-------------------------------------------:|:-------:|:--------------------------------------------------------------------------------------:|
-|          `1.8.8(Current version)`           | `5.4.0` |   [Release-note](https://echarts.apache.org/handbook/en/basics/release-note/5-4-0/)    |
+|     `1.8.8` ~ `1.8.9(Current version)`      | `5.4.0` |   [Release-note](https://echarts.apache.org/handbook/en/basics/release-note/5-4-0/)    |
 |                   `1.8.7`                   | `5.3.3` |   [Release-note](https://echarts.apache.org/handbook/en/basics/release-note/5-3-0/)    |
 |              `1.8.0` ~ `1.8.6`              | `5.3.0` |   [Release-note](https://echarts.apache.org/handbook/en/basics/release-note/5-3-0/)    |
 |              `1.7.4` ~ `1.7.7`              | `5.2.1` |   [Release-note](https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/)    |
