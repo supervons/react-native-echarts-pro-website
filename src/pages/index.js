@@ -54,7 +54,12 @@ function HomepageHeader() {
             />
           );
         })}
-        <p className="hero__subtitle"><Translate>A React-Native charts based on Apache Echarts, support various charts and map.</Translate></p>
+        <p className="hero__subtitle">
+          <Translate>
+            A React-Native charts based on Apache ECharts, support various
+            charts and map.
+          </Translate>
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
