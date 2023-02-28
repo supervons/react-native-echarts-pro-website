@@ -4,19 +4,20 @@ sidebar_position: 1
 
 # Props
 
-|       Prop        |  Type  |   Default   | Require |                                                Description                                                |
-| :---------------: | :----: | :---------: | :-----: |:---------------------------------------------------------------------------------------------------------:|
-|      height       | number |     400     |    Y    |                                             Chart area height                                             |
-|      width       | number |     auto     |    N    |                                              Chart area auto                                              |
-|      option       | object |    null     |    Y    | Chart configuration, see more：[Apache ECharts - options](https://echarts.apache.org/en/option.html#title) |
-|  backgroundColor  | string | transparent |    N    |                                          Chart background color                                           |
-|     themeName     | string |      -      |    N    |                      There are only six officially available themes:<br />`vintage` `dark`  `macarons` `infographic` `shine` `roma`  |
-|  webViewSettings  | object |    null     |    N    |                                  Customize WebView container properties                                   |
-| formatterVariable | object |    null     |    N    |                         If option’formatter function need variable,can use this.                          |
-| extension | object |    null     |    N    |        Dynamic support for tripartite expansion, such as word cloud, water polo map, etc. example.        |
-|   customMapData   | object |    null     |    N    |                  For custom maps, null is a world map. See the following usage examples                   |
-|   eventActions   | object |    null     |    N    |                                           Custom charts events.                                           |
-|   fontFamilies   | array  |    []     |    N    |                                           Custom font families.                                           |
+|       Prop        |  Type  |   Default   | Require |                                                  Description                                                   |
+| :---------------: |:------:|:-----------:| :-----: |:--------------------------------------------------------------------------------------------------------------:|
+|      height       | Number |     400     |    Y    |                                               Chart area height                                                |
+|      width       | Number |    auto     |    N    |                                                Chart area auto                                                 |
+|      option       | Object |    null     |    Y    |   Chart configuration, see more：[Apache ECharts - options](https://echarts.apache.org/en/option.html#title)    |
+|  backgroundColor  | String | transparent |    N    |                                             Chart background color                                             |
+|     themeName     | String |      -      |    N    | There are only six officially available themes:<br />`vintage` `dark`  `macarons` `infographic` `shine` `roma` |
+|  webViewSettings  | Object |    null     |    N    |                                     Customize WebView container properties                                     |
+| formatterVariable | Object |    null     |    N    |                            If option’formatter function need variable,can use this.                            |
+| extension | object |    Null     |    N    |          Dynamic support for tripartite expansion, such as word cloud, water polo map, etc. example.           |
+|   customMapData   | Object |    null     |    N    |                     For custom maps, null is a world map. See the following usage examples                     |
+|   eventActions   | Object |    null     |    N    |                                             Custom charts events.                                              |
+|   fontFamilies   | Array  |     []      |    N    |                                             Custom font families.                                              |
+|   enableParseStringFunction   | Boolean |    false    |  N  |                                   If enabled, function are parse as strings                                    |
 
 ## height
 
@@ -195,4 +196,50 @@ return (
     />
   </View>
 );
+```
+
+## enableParseStringFunction
+`> 1.9.0`
+
+In most cases, the `formatter` use `function` type. But the `Hermes` engine compiles it into bytecode and cannot run when injected into a `webview`, enabled this property parse the `function` as a string.
+
+```javascript
+// Echarts option
+const option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    axisLabel: {
+      formatter: `function (val) {
+        return val + '\\n' + '(week)';
+      }`,
+    },
+  },
+  yAxis: {
+    type: 'value',
+    axisLabel: {
+      formatter: `function (val) {
+        return val;
+      }`,
+      textStyle: {
+        color: `function (value, index) {
+          return value >= 200 ? 'green' : 'red';
+        }`,
+      },
+    },
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: 'line',
+    },
+  ],
+};
+
+// Echarts view
+<RNEChartsPro
+  style={{width: Dimensions.get('window').width}}
+  option={option}
+  enableParseStringFunction
+/>
 ```
