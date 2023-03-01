@@ -17,9 +17,12 @@ npm install react-native-echarts-pro --save
 yarn add react-native-echarts-pro
 ```
 ### 依赖项
-- [react-native](https://reactnative.dev/) 版本大于或等于 0.59.
+#### [react-native](https://reactnative.dev/) 
+- 版本大于或等于 0.59
 
-- [react-native-webview](https://github.com/react-native-webview/react-native-webview/) 版本大于或等于 6.9.0.
+#### [react-native-webview](https://github.com/react-native-webview/react-native-webview/)
+- 低于 `1.9.0` 需大于或等于 `6.9.0`
+- `1.9.0` 以上需大于或等于 `11.26.0`
 
 ## 例子
 ### 基础

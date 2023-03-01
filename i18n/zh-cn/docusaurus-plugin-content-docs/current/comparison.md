@@ -10,7 +10,7 @@ sidebar_label: '版本比较'
 
 |          react-native-echarts-pro           | Echarts |                                   Update Log                                   | 
 |:-------------------------------------------:|:-------:|:------------------------------------------------------------------------------:|
-|          `1.8.8` ~ `1.8.9(当前版本)`           | `5.4.0` |   [更新日志](https://echarts.apache.org/handbook/zh/basics/release-note/5-4-0/)    |
+|           `1.8.8` ~ `1.9.0(当前版本)`           | `5.4.0` |   [更新日志](https://echarts.apache.org/handbook/zh/basics/release-note/5-4-0/)    |
 |                   `1.8.7`                   | `5.3.3` |   [更新日志](https://echarts.apache.org/handbook/zh/basics/release-note/5-3-0/)    |
 |              `1.8.0` ~ `1.8.6`              | `5.3.0` |   [更新日志](https://echarts.apache.org/handbook/zh/basics/release-note/5-3-0/)    |
 |              `1.7.4` ~ `1.7.7`              | `5.2.1` |   [更新日志](https://echarts.apache.org/handbook/zh/basics/release-note/5-2-0/)    |

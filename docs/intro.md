@@ -16,9 +16,12 @@ or
 yarn add react-native-echarts-pro
 ```
 ### What you'll need
-- [react-native](https://reactnative.dev/) version 0.59 or above.
+#### [react-native](https://reactnative.dev/)
+- version 0.59 or above.
 
-- [react-native-webview](https://github.com/react-native-webview/react-native-webview/) version 6.9.0 or above.
+#### [react-native-webview](https://github.com/react-native-webview/react-native-webview/)
+- Below `1.9.0` must be greater than or equal to `6.9.0`
+- Above `1.9.0` must be greater than or equal to `11.26.0`
 
 ## Usage
 ### Base
