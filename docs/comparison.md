@@ -4,12 +4,13 @@ sidebar_position: 5
 
 # Comparison
 
-Let's comparison `react-native-echarts-pro` to `Echarts` version:
+Let's comparison `react-native-echarts-pro` to `ECharts` version:
 
 
-|          react-native-echarts-pro           | Echarts |                                       Update Log                                       | 
+|          react-native-echarts-pro           | ECharts |                                       Update Log                                       | 
 |:-------------------------------------------:|:-------:|:--------------------------------------------------------------------------------------:|
-|     `1.8.8` ~ `1.9.0(Current version)`      | `5.4.0` |   [Release-note](https://echarts.apache.org/handbook/en/basics/release-note/5-4-0/)    |
+|            `1.9.1(last version)`            | `5.4.2` |       [Release-note](https://echarts.apache.org/zh/changelog.html#v5-4-2/)             |
+|              `1.8.8` ~ `1.9.0`              | `5.4.0` |   [Release-note](https://echarts.apache.org/handbook/en/basics/release-note/5-4-0/)    |
 |                   `1.8.7`                   | `5.3.3` |   [Release-note](https://echarts.apache.org/handbook/en/basics/release-note/5-3-0/)    |
 |              `1.8.0` ~ `1.8.6`              | `5.3.0` |   [Release-note](https://echarts.apache.org/handbook/en/basics/release-note/5-3-0/)    |
 |              `1.7.4` ~ `1.7.7`              | `5.2.1` |   [Release-note](https://echarts.apache.org/handbook/en/basics/release-note/5-2-0/)    |
