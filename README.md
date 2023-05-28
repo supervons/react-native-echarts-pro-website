@@ -1,7 +1,8 @@
 # Website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
- 
+This is [react-native-echarts-pro](https://github.com/supervons/react-native-echarts-pro)'s website built using [Docusaurus 2](https://docusaurus.io/).
+
+See : [react-native-echarts-pro-website](https://supervons.github.io/react-native-echarts-pro-docs/)
 ### Installation
 
 ```
