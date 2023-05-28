@@ -6,13 +6,13 @@ sidebar_label: '自定义'
 
 <img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.1/react-native-echarts-pro-website/font/demo_1.png" alt="字体Demo" height="500" align="bottom" />
 
-核心是让`WebView`容器加载字体，然后让`Echarts`能够进行调用，下面，将详细介绍如何接入自定义字体！
+核心是让`WebView`容器加载字体，然后让`ECharts`能够进行调用，下面，将详细介绍如何接入自定义字体！
 
 ## 步骤
 1. 下载你所需要的字体文件；
 2. 转换成 `base64` 格式的 `CSS` 文件；
 3. 使用属性 `fontFamilies` 引入；
-4. `Echarts options` 中使用即可；
+4. `ECharts options` 中使用即可；
 
 ## 文件格式转换
 ### 1. 格式转换

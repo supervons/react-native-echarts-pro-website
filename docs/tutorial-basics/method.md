@@ -100,7 +100,7 @@ echartsRef.current.getInstance('dispatchAction', {
   dataIndex: 0,
 })
 ```
-See more => [EchartsInstance](https://echarts.apache.org/en/api.html#echartsInstance)
+See more => [EChartsInstance](https://echarts.apache.org/en/api.html#echartsInstance)
 
 ## dispatchAction
 Will be merged to [getInstance](#getinstance).
@@ -116,7 +116,7 @@ echartsRef.current.dispatchAction({
 ```jsx
 import React, { useRef } from "react";
 import { Text, View } from "react-native";
-import Echarts from "react-native-echarts-pro";
+import ECharts from "react-native-echarts-pro";
 export default function StockInDetail() {
   const echartsRef = new useRef(null);
   function highlight() {
@@ -136,7 +136,7 @@ export default function StockInDetail() {
   }
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Echarts
+      <ECharts
         ref={echartsRef}
         option={{
           xAxis: {

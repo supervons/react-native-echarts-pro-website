@@ -204,7 +204,7 @@ return (
 In most cases, the `formatter` use `function` type. But the `Hermes` engine compiles it into bytecode and cannot run when injected into a `webview`, enabled this property parse the `function` as a string.
 
 ```javascript
-// Echarts option
+// ECharts option
 const option = {
   xAxis: {
     type: 'category',
@@ -236,7 +236,7 @@ const option = {
   ],
 };
 
-// Echarts view
+// ECharts view
 <RNEChartsPro
   style={{width: Dimensions.get('window').width}}
   option={option}

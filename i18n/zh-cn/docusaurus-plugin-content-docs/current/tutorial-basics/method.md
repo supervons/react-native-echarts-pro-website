@@ -103,7 +103,7 @@ echartsRef.current.getInstance('dispatchAction', {
   dataIndex: 0,
 })
 ```
-查看更多 => [EchartsInstance](https://echarts.apache.org/zh/api.html#echartsInstance)
+查看更多 => [EChartsInstance](https://echarts.apache.org/zh/api.html#echartsInstance)
 
 ## dispatchAction
 功能同： [getInstance](#getinstance).
@@ -119,7 +119,7 @@ echartsRef.current.dispatchAction({
 ```jsx
 import React, { useRef } from "react";
 import { Text, View } from "react-native";
-import Echarts from "react-native-echarts-pro";
+import ECharts from "react-native-echarts-pro";
 export default function StockInDetail() {
   const echartsRef = new useRef(null);
   function highlight() {
@@ -139,7 +139,7 @@ export default function StockInDetail() {
   }
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Echarts
+      <ECharts
         ref={echartsRef}
         option={{
           xAxis: {

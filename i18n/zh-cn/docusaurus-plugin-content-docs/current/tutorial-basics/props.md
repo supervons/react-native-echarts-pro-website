@@ -205,7 +205,7 @@ return (
 
 在很多场景下，`formatter` 属性需要配置函数去进行操作，由于 `Hermes` 引擎会把其编译成字节码, 注入 `webview` 后就无法运行，故开启此属性将以字符串的形式传递`function`。
 ```javascript
-// Echarts option
+// ECharts option
 const option = {
   xAxis: {
     type: 'category',
@@ -237,7 +237,7 @@ const option = {
   ],
 };
 
-// Echarts view
+// ECharts view
 <RNEChartsPro
   style={{width: Dimensions.get('window').width}}
   option={option}

@@ -2,7 +2,7 @@
 sidebar_position: 1
 sidebar_label: '内置字体'
 ---
-使用 `Echarts` 内置字体，如下：
+使用 `ECharts` 内置字体，如下：
 ```jsx
 const options = {
     ...,

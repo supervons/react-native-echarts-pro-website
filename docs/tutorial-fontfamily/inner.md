@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-Use `Echarts` inner font family：
+Use `ECharts` inner font family：
 ```jsx
 const options = {
     ...,

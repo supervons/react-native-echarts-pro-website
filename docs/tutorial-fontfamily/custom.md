@@ -5,13 +5,13 @@ Custom fonts can make your charts have richer display capabilities.
 
 <img style={{height:400}} src="https://cdn.jsdelivr.net/gh/supervons/ImageLibrary@v1.0.1/react-native-echarts-pro-website/font/demo_1.png" alt="font family demo" height="500" align="bottom" />
 
-Center on `WebView` container loading font family, than `Echarts` call it, now, let's get it!
+Center on `WebView` container loading font family, than `ECharts` call it, now, let's get it!
 
 ## Steps
 1. Download your need font families;
 2. Change it to includes `base64 CSS` file;
 3. Use props `fontFamilies`;
-4. `Echarts options` configuration; 
+4. `ECharts options` configuration; 
 
 ## Change file type
 ### 1. change
