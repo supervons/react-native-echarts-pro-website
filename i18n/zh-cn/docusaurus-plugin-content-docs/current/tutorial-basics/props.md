@@ -212,6 +212,7 @@ const option = {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     axisLabel: {
       formatter: `function (val) {
+        'show source';
         return val + '\\n' + '(week)';
       }`,
     },
@@ -220,10 +221,12 @@ const option = {
     type: 'value',
     axisLabel: {
       formatter: `function (val) {
+        'show source';
         return val;
       }`,
       textStyle: {
         color: `function (value, index) {
+          'show source';
           return value >= 200 ? 'green' : 'red';
         }`,
       },
